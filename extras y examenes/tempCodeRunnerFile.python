@@ -1,0 +1,28 @@
+import sys
+from time import sleep
+import time
+
+def print_Lyrics():
+    lines = [
+        ("Porque tal vez, lo nuestro era solo para divertirse (¡wuh!),", 0.08),
+        ("Pero este tonto suele confundirse (eh),", 0.05),
+        ("Y es triste (qué),", 0.06),
+        ("Que del finde ya no he vuelto a sonreír (ay),", 0.04),
+        ("Tal vez, lo nuestro era solo para divertirse (divertirse),", 0.08),
+        ("Pero este tonto suele confundirse (eh),", 0.04),
+        ("Y es triste (ah),", 0.05)
+        ("Que del finde ya no he vuelto a sonreír, ey (ah),", 0.05)
+
+    ]
+
+    delays = [0.4, 0.4, 0.5, 0.3, 0.2, 0.6, 0.5, 0.4]
+
+    for i, (line, char_delay) in enumerate(lines):
+        for char in line:
+            print(char, end='')
+            sys.stdout.flush()
+            sleep(char_delay)
+        time.sleep(delays[i])
+        print('')
+
+print_Lyrics()            
