@@ -1,3 +1,33 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+#include "./librerias/ahorcado.h"
+using namespace std;
+string palabraAleatoria(string palabras[]) {
+    srand(time(NULL));
+    int numero = rand() % 5;
+    return palabras[numero];
+}
+int opciones() {
+    int op;
+    cout << "1. Deportes" << endl;
+    cout << "2. Animales" << endl;
+    cout << "3. Frutas" << endl;
+    cout << "4. Paises" << endl;
+    cin >> op;
+    return op;
+}
+void mostrarPalabra(const string &palabra, const bool letrasAdivinadas[]) {
+    for (int i = 0; i < palabra.length(); i++) {
+        if (letrasAdivinadas[i]) {
+            cout << palabra[i] << " ";
+        } else {
+            cout << "_ ";
+        }
+    }
+    cout << endl;
+}
+
 void dibujarAhorcado(int intentos) {
     switch (intentos) {
         case 6:
@@ -112,10 +142,35 @@ bool jugarAhorcado(const string &palabra) {
     }
 
     if (juegoTerminado) {
-        cout << "¡Felicidades! Has adivinado la palabra: " << palabra << endl;
+        cout << "Felicidades! Has adivinado la palabra: " << palabra << endl;
     } else {
-        cout << "¡Has perdido! La palabra era: " << palabra << endl;
+        cout << "Has perdido! La palabra era: " << palabra << endl;
     }
 
     return juegoTerminado;
+}
+
+int main() {
+    string palabras[5], palabraSeleccionada;
+    int op;
+    cout << "Juego del Ahorcado" << endl;
+    cout << "-------------------" << endl;
+    cout << "Elige una categoria: " << endl;
+    op = opciones();
+    if (op == 1) {
+        deportes(palabras);
+    } else if (op == 2) {
+        animales(palabras);
+    } else if (op == 3) {
+        frutas(palabras);
+    }else if (op == 4) {
+        paises(palabras);
+    }else {
+        cout << "Opción no válida." << endl;
+        return 1;
+    }
+    palabraSeleccionada = palabraAleatoria(palabras);
+    cout << "Buena suerte! Adivina la palabra." << endl;
+    jugarAhorcado(palabraSeleccionada);
+    return 0;
 }
