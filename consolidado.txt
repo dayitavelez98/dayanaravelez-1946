@@ -1,0 +1,16 @@
+Cantidad total de producto: -2119521461
+Cantidad total de Laptop: -2119521456
+Cantidad total de Mouse: -2119521441
+Cantidad total de Teclado: -2119521433
+Cantidad total de Monitor: -2119521430
+Cantidad total de Impresora: -2119521424
+Cantidad total de Webcam: -2119521398
+Cantidad total de articulos vendidos en la sucursal Sur: 3489
+Cantidad de teclados vendidos en la sucursal Norte: -2119522075
+Recaudación total en cada sucursal:
+Norte: -3.73036e+12
+Sur: 869640
+Este: 227110
+Centro: 8880
+Recaudación total de la empresa: -3.73036e+12
+Sucursal de mayor recaudacion: Sur
